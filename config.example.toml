@@ -1,0 +1,15 @@
+# パスは実行時のカレントディレクトリを基準に解決します。
+# 優先順位: CLI > この設定 > 既定値（再開時は保存済み設定）。
+# 新規作品のセルは20×20px固定。columnsはセルの個数を指定します。
+[art]
+columns = 100
+title = "セルで描く写真"
+max_cells = 100000
+batch_bytes = 1000000
+
+[google]
+credentials = ".secrets/client_secret.json"
+token = ".secrets/token.json"
+
+[output]
+directory = "outputs/my-art"

@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "画像をdry-run",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "spreadsheet_cell_art",
+      "args": ["--image", "${input:imagePath}", "--dry-run", "--output-dir", "outputs/vscode-preview"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "20px検証をdry-run",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "spreadsheet_cell_art",
+      "args": ["--probe", "--dry-run", "--output-dir", "outputs/probe-preview"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    {"id": "imagePath", "type": "promptString", "description": "JPG画像のパス"}
+  ]
+}

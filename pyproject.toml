@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spreadsheet-cell-art"
+version = "0.1.0"
+description = "JPEG画像をGoogleスプレッドシートのセル背景色で描くCLI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "Pillow>=12.1.1,<13",
+  "google-api-python-client>=2.190,<3",
+  "google-auth>=2.40,<3",
+  "google-auth-oauthlib>=1.2,<2",
+  "google-auth-httplib2>=0.2,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+
+[project.scripts]
+spreadsheet-cell-art = "spreadsheet_cell_art.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["spreadsheet_cell_art*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
